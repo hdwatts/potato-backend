@@ -7,12 +7,12 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 # Create seed users
-john = User.create(username: "John", score: "1000")
-bob = User.create(username: "Bob", score: "2500")
+john = User.create!(username: "John", score: "1000")
+bob = User.create!(username: "Bob", score: "2500")
 
 # Create seed games
-game_1 = Game.create(completed?: true, time: 62, difficulty: 'hard')
-game_2 = Game.create(completed?: false, time: 40, difficulty: 'easy')
+game_1 = Game.create!(completed?: true, time: 62, difficulty: 'hard')
+game_2 = Game.create!(completed?: false, time: 40, difficulty: 'easy')
 
 # Add games to the users
 john.games << game_1
