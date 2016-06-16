@@ -1,4 +1,4 @@
 class GameSerializer < ActiveModel::Serializer
-  attributes :id, :game_state, :winner
+  attributes :id, :completed?, :time, :difficulty
   has_many :users
 end
