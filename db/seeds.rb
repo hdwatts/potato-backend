@@ -6,18 +6,8 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-# Create seed users
-john = User.create!(username: "John", score: "1000")
-bob = User.create!(username: "Bob", score: "2500")
-
-# Create seed games
-game_1 = Game.create!(completed?: true, time: 62, difficulty: 'hard')
-game_2 = Game.create!(completed?: false, time: 40, difficulty: 'easy')
-
-# Add games to the users
-john.games << game_1
-bob.games << game_2
-
-# Saves
-john.save
-bob.save
+game_1 = Game.create!({score: 1000, username:"Dean", days: "7"})
+game_2 = Game.create!({score: 900, username:"Wes", days: "7"})
+game_3 = Game.create!({score: 800, username:"Will", days: "6"})
+game_4 = Game.create!({score: 700, username:"Eve", days: "6"})
+game_5 = Game.create!({score: 600, username:"Erin", days: "5"})

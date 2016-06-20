@@ -2,11 +2,20 @@ module Api
   module V1
     class GamesController < ApplicationController
       def index
-        render json: Game.all, include: ['users']
+        render json: Game.order(score: :desc).limit(25)
+      end
+
+      def create
+        Game.create(strong_params)
+      end
+
+      def update
+        Game.create(strong_params)
+      end
+
+      def strong_params
+        params.require(:data).require(:attributes).permit(:username, :score, :days)
       end
     end
   end
 end
-
-
-User.joins("LEFT OUTER JOIN User_Games ON User_Games.user_id = Users.id").joins("LEFT OUTER JOIN Games ON Games.id = User_Games.game_id").where("Games.winner = Users.id")
